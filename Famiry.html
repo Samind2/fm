@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Tree</title>
+</head>
+<body>
+    <script type="text/javascript">
+  var DIR = 'site/';
+  var nodes = new vis.DataSet([
+    {id: 0, label : 'Homepage' ,level:1, shape: 'circularImage', image: DIR + 'home-icon.png'},
+    {id: 1, label : 'Product' ,level:2, shape: 'circularImage', image: DIR + 'product.png'},
+    {id: 2, label : 'Community' ,level:2, shape: 'circularImage', image: DIR + 'community.jpg'},
+    {id: 3, label : 'About' ,level:2, shape: 'circularImage', image: DIR + 'about.png'},
+    {id: 4, label : 'Overview' ,level:3, shape: 'circularImage', image: DIR + 'overview.jpg'},
+    {id: 5, label : 'Shop' ,level:3, shape: 'circularImage', image: DIR + 'shop.png'},
+    {id: 6, label : 'Blog' ,level:3, shape: 'circularImage', image: DIR + 'blog.png'},
+    {id: 7, label : 'Guestbook' ,level:3, shape: 'circularImage', image: DIR + 'book.png'},
+    {id: 8, label : 'Gallery' ,level:3, shape: 'circularImage', image: DIR + 'gallery.jpg'},
+    {id: 9, label : 'Contact' ,level:3, shape: 'circularImage', image: DIR + 'contact.jpg'},
+  ]);
+  // create an array with edges
+  var edges = new vis.DataSet([
+    {from: 0, to: 1},{from: 0, to: 2},{from: 0, to: 3},
+    {from: 1, to: 4},{from: 1, to: 5},
+    {from: 2, to: 6},{from: 2, to: 7},
+    {from: 3, to: 8},{from: 3, to: 9},
+  ]);
+
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {}; //ส่วนที่ 3
+  var network = new vis.Network(container, data, options);
+
+</script>
+
+
+</body>
+</html>
